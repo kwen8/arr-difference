@@ -1,6 +1,6 @@
 {
   "name": "arr-difference",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "return difference of array",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "diff"
   ],
   "author": "chankwen",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "mocha": "^3.5.3"
   },
