@@ -1,0 +1,20 @@
+{
+  "name": "arr-difference",
+  "version": "1.0.0",
+  "description": "return difference of array",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "array",
+    "difference",
+    "diff"
+  ],
+  "author": "chankwen",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  },
+  "dependencies": {}
+}
