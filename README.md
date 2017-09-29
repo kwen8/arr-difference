@@ -1,4 +1,4 @@
-# arr-difference
+# arr-difference [![npm version](https://badge.fury.io/js/arr-difference.svg)](https://badge.fury.io/js/arr-difference)
 
 > Returns an array with the values from the first array(not need to be unique values), by excluding all values from additional arrays using strict equality for comparisons.
 
