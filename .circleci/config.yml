@@ -1,25 +1,33 @@
+# This config was automatically generated from your source code
+# Stacks detected: deps:node:.
 version: 2.1
-
+orbs:
+  node: circleci/node@5
 jobs:
-  build_and_test:
-    docker:
-      - image: cimg/node:16.20
+  test-node:
+    # Install node dependencies and run tests
+    executor: node/default
     steps:
       - checkout
+      - node/install-packages:
+          cache-path: ~/project/node_modules
+          override-ci-command: npm install
       - run:
-          name: Install Dependencies
-          command: npm install
+          name: Run tests
+          command: npm test --passWithNoTests
+  deploy:
+    # This is an example deploy job, not actually used by the workflow
+    docker:
+      - image: cimg/base:stable
+    steps:
+      # Replace this with steps to deploy to users
       - run:
-          name: Run Tests
-          command: npm test
-
+          name: deploy
+          command: '#e.g. ./deploy.sh'
 workflows:
-  version: 2
-  test_on_push:
+  build-and-test:
     jobs:
-      - build_and_test:
-          filters:
-            branches:
-              ignore: [] # Trigger on all branches
-            tags:
-              ignore: /.*/ # Do not trigger on tags by default
+      - test-node
+    # - deploy:
+    #     requires:
+    #       - test-node
